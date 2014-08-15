@@ -3,6 +3,7 @@
 # $Header: $
 
 EAPI="5"
+inherit eutils
 
 DESCRIPTION="High perfomance data compression library"
 HOMEPAGE="http://libbsc.com"
@@ -17,7 +18,16 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 
-src_prepare() {
-	default
-	sed -i -e "^/PREFIX =/cPREFIX = ${EPREFIX}"
+src_unpack() {
+	mkdir "${P}" ; cd "${P}"
+	unpack "${A}"
+}
+
+src_configure() {
+	sed -i -e "/^PREFIX =/cPREFIX = ${EPREFIX}/usr" makefile
+}
+
+src_install() {
+	echo "${D}"
+	emake PREFIX="${ED}/usr" install
 }
