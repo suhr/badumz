@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="5"
-inherit eutils git-2 cmake-utils
+inherit eutils git-2 qmake-utils
 
 DESCRIPTION="A free and open source, cross-platform, libmpv based multimedia player"
 HOMEPAGE="http://bakamplayer.u8sand.net/"
@@ -26,8 +26,12 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+src_configure() {
+	eqmake5 src/Baka-MPlayer.pro
+}
+
 src_install() {
-	dobin "${CMAKE_BUILD_DIR}/baka-mplayer"
-	doicon -s scalable "${S}/arch/baka-mplayer.svg"
-	domenu "${S}/arch/baka-mplayer.desktop"
+	dobin "${S}/build/baka-mplayer"
+	doicon -s scalable "${S}/etc/logo/baka-mplayer.svg"
+	domenu "${S}/etc/baka-mplayer.desktop"
 }
