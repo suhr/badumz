@@ -20,4 +20,5 @@ RDEPEND="${DEPEND}"
 
 src_configure() {
 	sed -i -e "/^PREFIX =/cPREFIX = ${EPREFIX}/usr" config.mk
+	sed -i -e "/#define VIM_BINDINGS/s/1/0/" config.def.h
 }
