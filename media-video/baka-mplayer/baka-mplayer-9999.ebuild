@@ -27,7 +27,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	eqmake5 src/Baka-MPlayer.pro
+	eqmake5 src/Baka-MPlayer.pro CONFIG+=release
 }
 
 src_install() {
