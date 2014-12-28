@@ -15,6 +15,11 @@ SLOT="0"
 IUSE=""
 KEYWORDS=""
 
+LANGS="ko pt ru zh"
+for X in ${LANGS} ; do
+    IUSE="${IUSE} linguas_${X}"
+done
+
 DEPEND="
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
@@ -27,11 +32,14 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_configure() {
-	eqmake5 src/Baka-MPlayer.pro CONFIG+=release
+	TRANSLATIONS=()
+	for l in ${LINGUAS}; do
+		TRANSLATIONS+=("TRANSLATIONS+=translations/baka-mplayer_$l.ts")
+	done
+	QT_SELECT=qt5 eqmake5 src/Baka-MPlayer.pro CONFIG+=release \
+		CONFIG+=embed_translations "${TRANSLATIONS[@]}"
 }
 
 src_install() {
-	dobin "${S}/build/baka-mplayer"
-	doicon -s scalable "${S}/etc/logo/baka-mplayer.svg"
-	domenu "${S}/etc/baka-mplayer.desktop"
+	emake INSTALL_ROOT="${D}" DESTDIR="${D}" install
 }
