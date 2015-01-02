@@ -15,7 +15,7 @@ SLOT="0"
 IUSE=""
 KEYWORDS=""
 
-LANGS="ko pt ru zh"
+LANGS="it ko pt ru zh_CN"
 for X in ${LANGS} ; do
     IUSE="${IUSE} linguas_${X}"
 done
@@ -37,7 +37,7 @@ src_configure() {
 		TRANSLATIONS+=("TRANSLATIONS+=translations/baka-mplayer_$l.ts")
 	done
 	QT_SELECT=qt5 eqmake5 src/Baka-MPlayer.pro CONFIG+=release \
-		CONFIG+=embed_translations "${TRANSLATIONS[@]}"
+		CONFIG+=install_translations "${TRANSLATIONS[@]}"
 }
 
 src_install() {
