@@ -4,6 +4,7 @@
 
 EAPI="5"
 PYTHON_COMPAT=("python2_7")
+CMAKE_BUILD_TYPE="Debug"  # see https://github.com/mozilla/rr/issues/1180
 
 inherit python-any-r1 cmake-utils git-r3
 
