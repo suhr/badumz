@@ -1,0 +1,10 @@
+--- src/old_repository.h	2016-07-07 19:40:13.096942000 +0300
++++ src/repository.h	2016-07-07 19:40:34.880942000 +0300
+@@ -21,6 +21,7 @@
+ #ifndef REPOSITORY_H
+ #define REPOSITORY_H
+ 
++#include <QObject>
+ #include <QStringList>
+ #include <QJsonArray>
+ #include <QString>
