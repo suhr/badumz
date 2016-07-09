@@ -26,10 +26,6 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-src_prepare() {
-    epatch "${FILESDIR}/00-include-qobject.patch"
-}
-
 src_compile() {
     eqmake5 "PREFIX=/usr"
 
