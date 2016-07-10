@@ -15,5 +15,8 @@ SLOT="0"
 IUSE=""
 KEYWORDS=""
 
-RDEPEND="media-libs/csfml"
+RDEPEND="
+    media-libs/csfml
+    media-libs/portmidi
+"
 DEPEND="$RDEPEND"
