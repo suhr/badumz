@@ -32,10 +32,7 @@ src_prepare() {
 }
 
 src_configure() {
-	local opts=(
-		$(use_with ssl openssl)
-	)
-	econf $opts
+	econf "$(use !ssl '--without-openssl')"
 }
 
 pkg_postinst() {
