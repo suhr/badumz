@@ -16,7 +16,7 @@ S="${WORKDIR}/Mathics-${PV}"
 LICENSE="GPLv3"
 SLOT="0"
 IUSE=""
-KEYWORDS=""
+KEYWORDS="~x86 ~amd64"
 
 RDEPEND="
     ~dev-python/sympy-1.0
