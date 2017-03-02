@@ -1,6 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -14,6 +13,11 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="qt5"
+
+LANGS=(en it ja pt ru)
+for l in $LANGS; do
+    USE+="linguas_${l}"
+done
 
 DEPEND="
     qt5? (

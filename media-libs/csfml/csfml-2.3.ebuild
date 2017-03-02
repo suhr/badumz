@@ -1,6 +1,5 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -15,7 +14,7 @@ S="${WORKDIR}/CSFML-${PV}"
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE=""
 
 DEPEND=">=media-libs/libsfml-${PV}.0"
 RDEPEND="${DEPEND}"
