@@ -1,12 +1,12 @@
 # Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="5"
+EAPI=6
 inherit autotools git-r3
 
 DESCRIPTION="SILE typesetting system"
 HOMEPAGE="http://www.sile-typesetter.org/"
-SRC_URI=""
+#SRC_URI=""
 EGIT_REPO_URI="https://github.com/simoncozens/sile.git"
 
 LICENSE="MIT"
@@ -19,6 +19,7 @@ RDEPEND="
 	dev-lua/lpeg
 	dev-lua/luaexpat
 	dev-lua/luafilesystem
+	dev-lua/lua-zlib
 "
 DEPEND="$RDEPEND"
 
