@@ -24,5 +24,9 @@ RDEPEND="
 DEPEND="$RDEPEND"
 
 src_prepare() {
+	eapply_user
+
 	eautoreconf
+	(cd libtexpdf; autoreconf -I m4)
+	sed -i -e 's/rm -f core/rm -f/' configure
 }
