@@ -20,6 +20,7 @@ for l in $LANGS; do
 done
 
 DEPEND="
+    app-text/hunspell
     qt5? (
         dev-qt/qtprintsupport:5
         dev-qt/qtwebkitwidgets:5
